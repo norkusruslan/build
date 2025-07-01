@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Cocos Creator | ASTRAHAVOC</title>
+
+  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+  <meta name="viewport"
+    content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true" />
+
+  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- force webkit on 360 -->
+  <meta name="renderer" content="webkit" />
+  <meta name="force-rendering" content="webkit" />
+  <!-- force edge on IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- force full screen on some browser -->
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="360-fullscreen" content="true" />
+
+  <!--fix fireball/issues/3568 -->
+  <!--<meta name="browsermode" content="application">-->
+  <meta name="x5-page-mode" content="app">
+
+  <!--<link rel="apple-touch-icon" href=".png" />-->
+  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+
+  <meta name="google-adsense-platform-domain" content="douyougame.com">
+  <meta name="google-adsense-platform-account" content="ca-host-pub-5396158963872751">
+  <script async
+    data-ad-client="undefined"
+    
+    data-ad-host="ca-host-pub-5396158963872751"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+  </script>
+  <script>
+    window.adsbygoogle = window.adsbygoogle || [];
+    var adBreak = adConfig = function(o) {adsbygoogle.push(o);}
+  </script>
+</head>
+            
+
+<body>
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background-color: #1256FB;
+      overflow: hidden;
+    }
+
+    #fullpage {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1256FB;
+      opacity: 1;
+      transition: 1s opacity;
+    }
+
+    #fullpage.fade-out {
+      opacity: 0;
+    }
+
+    #loader-container {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+	
+	#loader-background-image {
+        width: 15vw;
+    }
+	
+	@media (orientation: portrait) {
+    #loader-background-image {
+        width: 30vw;
+        height: auto;
+    }
+}
+  </style>
+  <div id="GameDiv" cc_exact_fit_screen="true">
+    <div id="Cocos3dGameContainer">
+      <div id="fullpage">
+        <div id="loader-container">
+          <img id="loader-background-image"
+            src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAACACAMAAADTa0c4AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAATOUAAEzlAXXO8JUAAAA/UExURUdwTP///////////////////////////////////////////////////////////////////////////////0qNmhgAAAAUdFJOUwDwRCTLvG2Jq360llX6NNgMBRblXIp8VQAACQNJREFUeNrtnOfarCgMgK1YEBXl/q91dYoGCATbfLv7kPNr5vNYXhJSnSSJEiVKlChRokSJEiVKlChRokSJEiVKFI9kpSbd+l1deKVaDmHb/6i2U8n9NPnysStNqXmTScd9VNnfPL8clCZs/dL4zpR6OaTZPrXbucb9kF47BErKJ/RGatXmfwGAqXMAqrMAFgQNDkCJRv78+af0BIDsGgClyhEFoNTwczvg6jiAMrkKQBUjDkD92g5ycRyAyK8DeFkRCmAxkF/aQamOA+DJDQDe18EA/NIOZKaOA0inWwCkoxPAcsrpb1xgEIDP0l0FoBoPgF/ZAVPHAQzyBAAxLDLr+83gA/AbO7Bc4Aag4ZoUhgs8DGD4WByHDHIvgF/YAQ/anHRL2Z72BIA1OgbOhBEAVMrkr1zgMPgAMNMFngcAH7OhACzhQv8jF5gVHgBjarrACwAYdi4ngCVeeM4OMqjXPgCV5QIvAOgOAnjODoBhL3rtAQCDRZZcBQBoVkEAHrMDpt2JB0Bru8DzAPLUud3Wnrh5etQFrnrtBpAhLvA0gG4+4AbB1vuAHXB9JZwAZIG4wMMA0lc40aYHAqGH7QC6QOkDgLrAW0JhdgiAEvfaQWnotQvAOLs2rasA5vEYgNUfPJIFvhNzFwDcBd4BoEuOArjRDnQX6AHgcIE3AODJCQC3+QNm6bUDQI27wOsAuDwFQKi5u9cFfi0RB+BygVcBiCZJzmnAPXYAXGDVvwVPhlwuMNGebsaA5T4APLkAQAg+3l0IdXgnpws0/pghzzB5NSC/AGBF3t3lAr0A3C7QWO1hspikupKoZhHhqwkfAqBUeaF4nqlAAG4X+MIj4Iose1rOzao3ADAa9Zf+IgB13g7kEAgAWsqs9zgbI0kSSgyp7eUNALACV14FcN4OmAoEUBNdDd+JxIQAgCqlMhpA3T5h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'>
+        </div>
+      </div>
+      <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+    </div>
+  </div>
+  
+
+<!-- Polyfills bundle. -->
+
+<script src="src/polyfills.bundle.js" charset="utf-8"> </script>
+
+
+<!-- SystemJS support. -->
+<script src="src/system.bundle.js" charset="utf-8"> </script>
+
+<!-- Import map -->
+<script src="src/import-map.json" type="systemjs-importmap" charset="utf-8"> </script>
+
+<script>
+    System.import('./index.js').catch(function(err) { console.error(err); })
+</script>
+
+</body>
+
+</html>
